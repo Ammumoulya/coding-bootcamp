@@ -1,0 +1,172 @@
+:root{
+  --col-dark-blue: hsl(240,38%,20%);
+  --col-grayish-blue: hsl(240, 18%, 77%);
+}
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  display: grid;
+  justify-items: center;
+  padding:1.5em 1.5em 0 ;
+  grid-template-rows: auto 20px;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.container .image{
+  width: 100%;
+  padding: 2.1em;
+  background-image: url('./images/pattern-bg.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.container .image >img{
+  width:100%;
+  box-shadow: 0 40px 30px -20px rgba(0, 0, 0, 0.5);
+  max-width: 350px;
+}
+
+.container .image .buttons{
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  bottom:1em;
+}
+
+.container .image .buttons>div{
+  display: grid;
+  place-items: center;
+  padding: 15px 20px;
+  background-color: white;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  cursor: pointer;
+  max-width: 70px;
+}
+
+.container .image .buttons>div>img{
+  width:8px;
+}
+
+.container .image .buttons>div:nth-child(2){
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+}
+
+.content{
+  width:100%;
+  font-family: 'inter',sans-serif;
+  text-align: center;
+  padding:1.5em 0.5em;
+  background-image: url('./images/pattern-quotes.svg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 20%;
+  max-width: 350px;
+}
+
+.content .comment{
+  color:var(--col-dark-blue);
+  font-weight: 300;
+
+}
+
+.content .name{
+  margin-top: 0.7em;
+  font-size: 0.9em;
+}
+
+.content .job{
+  font-size: 0.85em;
+  color:var(--col-grayish-blue);
+  font-weight: 500;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: bottom;
+  display: flex;
+  align-items: center;
+}
+.attribution a {
+  display: inline-block;
+  color: hsl(228, 45%, 44%);
+}
+
+
+
+@media only screen and (min-width:768px){
+  body{
+    padding:0;
+    background-image: url('./images/pattern-curve.svg');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+  }
+  
+  .container{
+    position: relative;
+    width: 85%;
+    min-width: 700px;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 0;
+  }
+  
+  .container .image{
+    width: 100%;   
+    margin-left: -20%; 
+  }
+  
+  .container .image >img{
+    width:80%;
+    max-width: unset;
+  }
+  
+  .container .image .buttons{
+    left:20%;
+  }
+  
+  .content{
+    text-align: left;
+    padding:1.5em 0;
+    background-size: 10%;
+    background-position: top left;
+    max-width: unset;
+    z-index: 10;
+  }
+  
+  .content .comment{
+    font-size: 1.5em;
+    word-spacing: 0.5em;
+  }
+  
+  .content .name{
+    margin-top: 2em;
+    display: inline-block;
+  }
+  
+  .content .job{
+    display: inline-block;
+    margin-top: 2em;
+  }
+}
